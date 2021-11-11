@@ -33,7 +33,6 @@ class ContactInfoPlugin: FlutterPlugin, MethodCallHandler {
     channel = MethodChannel(flutterPluginBinding.binaryMessenger, "contact_info")
     channel.setMethodCallHandler(this)
   }
-
   override fun onMethodCall(@NonNull call: MethodCall, @NonNull result: Result) {
     if (call.method == "getPlatformVersion") {
       result.success("Android ${android.os.Build.VERSION.RELEASE}")
@@ -45,15 +44,10 @@ class ContactInfoPlugin: FlutterPlugin, MethodCallHandler {
       result.notImplemented()
     }
   }
-
   override fun onDetachedFromEngine(@NonNull binding: FlutterPlugin.FlutterPluginBinding) {
     channel.setMethodCallHandler(null)
   }
-
-
 }
-
-
 
 fun getAllContacts(context: Context): ArrayList<HashMap<String,String>>? {
   val contacts: ArrayList<HashMap<String,String>> = ArrayList<HashMap<String,String>>()
@@ -93,10 +87,7 @@ fun getAllContacts(context: Context): ArrayList<HashMap<String,String>>? {
   return contacts
 }
 
-
-
 fun getAppList(context: Context): List<HashMap<String,String>>? {
-
   val appLists: MutableList<HashMap<String,String>> = ArrayList<HashMap<String,String>>()
   var map: HashMap<String,String>
   val pm = context.packageManager
