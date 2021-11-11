@@ -245,6 +245,9 @@ class AppDataConfig:NSObject {
         
     }
     
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
     
 }
 

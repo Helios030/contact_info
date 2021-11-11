@@ -7,6 +7,9 @@ import Flutter
     _ application: UIApplication,
     didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
   ) -> Bool {
+    // 初始化
+    _ = AppDataConfig.config
+    
     GeneratedPluginRegistrant.register(with: self)
     
     let controller : FlutterViewController = window?.rootViewController as! FlutterViewController
